@@ -38,11 +38,6 @@ var app = {
   // Update DOM on a Received Event
   receivedEvent: function(id) {
     var parentElement = document.getElementById(id);
-    var listeningElement = parentElement.querySelector('.listening');
-    var receivedElement = parentElement.querySelector('.received');
-
-    listeningElement.setAttribute('style', 'display:none;');
-    receivedElement.setAttribute('style', 'display:block;');
 
     console.log('Received Event: ' + id);
 
@@ -65,15 +60,15 @@ var app = {
   },
   createPayment: function() {
     // for simplicity use predefined amount
-    var paymentDetails = new PayPalPaymentDetails("50.00", "0.00", "0.00");
-    var payment = new PayPalPayment("00.10", "USD", "Siteler Inc", "Sale",
+    var paymentDetails = new PayPalPaymentDetails("0.10", "0.00", "0.00");
+    var payment = new PayPalPayment("0.10", "USD", "Siteler Inc", "Sale",
       paymentDetails);
     return payment;
   },
   configuration: function() {
     // for more options see `paypal-mobile-js-helper.js`
     var config = new PayPalConfiguration({
-      merchantName: "Siteler Inc",
+      merchantName: "My test shop",
       merchantPrivacyPolicyURL: "https://mytestshop.com/policy",
       merchantUserAgreementURL: "https://mytestshop.com/agreement"
     });
