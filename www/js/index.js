@@ -47,7 +47,7 @@ var app = {
   initPaymentUI: function() {
     var clientIDs = {
       "PayPalEnvironmentProduction": "YOUR_PRODUCTION_CLIENT_ID",
-      "PayPalEnvironmentSandbox": "YOUR_SANDBOX_CLIENT_ID"
+      "PayPalEnvironmentSandbox": "AYrq1xCDhA6e8Z0NzgzmCdcX5-dn7U8E-vW3CIgDXx3CllKUiJl0opDJnTQ0"
     };
     PayPalMobile.init(clientIDs, app.onPayPalMobileInit);
 
@@ -60,15 +60,15 @@ var app = {
   },
   createPayment: function() {
     // for simplicity use predefined amount
-    var paymentDetails = new PayPalPaymentDetails("0.10", "0.00", "0.00");
-    var payment = new PayPalPayment("0.10", "USD", "Siteler Inc", "Sale",
+    var paymentDetails = new PayPalPaymentDetails("2.10", "0.00", "0.00");
+    var payment = new PayPalPayment("2.10", "USD", "Siteler Inc", "Sale",
       paymentDetails);
     return payment;
   },
   configuration: function() {
     // for more options see `paypal-mobile-js-helper.js`
     var config = new PayPalConfiguration({
-      merchantName: "My test shop",
+      merchantName: "Siteler Inc",
       merchantPrivacyPolicyURL: "https://mytestshop.com/policy",
       merchantUserAgreementURL: "https://mytestshop.com/agreement"
     });
@@ -105,7 +105,7 @@ var app = {
   onPayPalMobileInit: function() {
     // must be called
     // use PayPalEnvironmentNoNetwork mode to get look and feel of the flow
-    PayPalMobile.prepareToRender("PayPalEnvironmentNoNetwork", app.configuration(),
+    PayPalMobile.prepareToRender("PayPalEnvironmentSandbox", app.configuration(),
       app.onPrepareRender);
   },
   onUserCanceled: function(result) {
