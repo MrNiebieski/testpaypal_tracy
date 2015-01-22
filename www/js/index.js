@@ -47,7 +47,7 @@ var app = {
   initPaymentUI: function() {
     var clientIDs = {
       "PayPalEnvironmentProduction": "APP-80W284485P519543T",
-      "PayPalEnvironmentSandbox": "AFcWxV21C7fd0v3bYYYRCpSSRl31ARMuM280alqnUWNQEJzkJ6W3j0FT"
+      "PayPalEnvironmentSandbox": "wth06-facilitator_api1.my.fsu.edu"
     };
     PayPalMobile.init(clientIDs, app.onPayPalMobileInit);
 
