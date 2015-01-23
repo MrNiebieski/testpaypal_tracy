@@ -57,7 +57,7 @@ var app = {
     alert("payment success");
     alert("payment success: " + JSON.stringify(payment, null, 4));
     console.log("payment success: " + JSON.stringify(payment, null, 4));
-    //var newdata = JSON.parse(payment).id;
+    var newdata = payment.id;
     //alert{String(newdata));
   },
   
