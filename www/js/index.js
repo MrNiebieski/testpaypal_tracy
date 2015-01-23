@@ -58,7 +58,6 @@ var app = {
     alert("payment success");
     alert(JSON.stringify(payment, null, 4));
     console.log("payment success: " + JSON.stringify(payment, null, 4));
-    alert ("test1");
     //var newdata = JSON.parse(payment);
     //alert(newdata["response"].create_time);
     if (window.XMLHttpRequest){
@@ -68,12 +67,9 @@ var app = {
     }
     xmlhttp.onreadystatechange = function(){
       if (xmlhttp.readystate == 4 && xmlhttp.status == 200 ){
-        alert ("test1");
       }}
-      alert("test2")
       xmlhttp.open("POST","poststatus.php?q="+str,true);
       xmlhttp.send();
-      alert("test3");
   },
   
   onAuthorizationCallback: function(authorization) {
