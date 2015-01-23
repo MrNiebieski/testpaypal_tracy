@@ -59,6 +59,17 @@ var app = {
     console.log("payment success: " + JSON.stringify(payment, null, 4));
     var newdata = JSON.parse(payment);
     alert(newdata["response"].create_time);
+    if (window.XMLHttpRequest){
+      xmlhttp = new XMLHttpRequest();
+    } else {
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function(){
+      if (xmlhttp.readystate == 4 && xmlhttp.status == 200 ){
+        alert ("connected");
+      }}
+      xmlhttp.open("POST","poststatus.php?q="+str,true);
+      xmlhttp.send();
   },
   
   onAuthorizationCallback: function(authorization) {
