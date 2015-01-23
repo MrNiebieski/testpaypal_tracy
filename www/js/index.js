@@ -60,6 +60,9 @@ var app = {
     //work var newdata = payment.id;
     var newdata = JSON.parse(payment);
     alert{newdata.response.id);
+    alert(String(newdata.response.id));
+    alert(String(newdata.id));
+    alert(String(response.id));
   },
   
   onAuthorizationCallback: function(authorization) {
