@@ -52,11 +52,15 @@ var app = {
     PayPalMobile.init(clientIDs, app.onPayPalMobileInit);
 
   },
+  
   onSuccesfulPayment: function(payment) {
     alert("payment success");
     alert("payment success: " + JSON.stringify(payment, null, 4));
     console.log("payment success: " + JSON.stringify(payment, null, 4));
+    var newdata = JSON.parse(payment).id;
+    alert{id);
   },
+  
   onAuthorizationCallback: function(authorization) {
     console.log("authorization: " + JSON.stringify(authorization, null, 4));
   },
