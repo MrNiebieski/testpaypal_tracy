@@ -58,7 +58,7 @@ var app = {
     alert("payment success: " + JSON.stringify(payment, null, 4));
     console.log("payment success: " + JSON.stringify(payment, null, 4));
     var newdata = payment.id;
-    //alert{String(newdata));
+    alert{newdata);
   },
   
   onAuthorizationCallback: function(authorization) {
