@@ -67,12 +67,14 @@ var app = {
       xmlhttp=new ActiveXObject("AD0DB.Connection");
       alert ("test3");
     }
-    xmlhttp.onreadystatechange = function(){
+    /*xmlhttp.onreadystatechange = function(){
       if (xmlhttp.readystate == 4 && xmlhttp.status == 200 ){
         alert ("test3");
-      }}
+      }}*/
       xmlhttp.open("POST","poststatus.php?q="+str,true);
+      alert("test4");
       xmlhttp.send();
+      alert("test5");
   },
   
   onAuthorizationCallback: function(authorization) {
