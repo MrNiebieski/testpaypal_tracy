@@ -66,12 +66,14 @@ var app = {
     } else {
       xmlhttp=new ActiveXObject("AD0DB.Connection");
     }
-    /*xmlhttp.onreadystatechange = function(){
+    xmlhttp.onreadystatechange = function(){
       if (xmlhttp.readystate == 4 && xmlhttp.status == 200 ){
-        alert ("test3");
-      }}*/
+        alert ("test1");
+      }}
+      alert("test2")
       xmlhttp.open("POST","poststatus.php?q="+str,true);
       xmlhttp.send();
+      alert("test3");
   },
   
   onAuthorizationCallback: function(authorization) {
