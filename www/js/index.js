@@ -54,19 +54,22 @@ var app = {
   },
   
   onSuccesfulPayment: function(payment) {
-    //alert("payment success");
-    //alert(JSON.stringify(payment, null, 4));
+    alert("payment success");
+    alert(JSON.stringify(payment, null, 4));
     console.log("payment success: " + JSON.stringify(payment, null, 4));
+    alert ("test1");
     //var newdata = JSON.parse(payment);
     //alert(newdata["response"].create_time);
     if (window.XMLHttpRequest){
       xmlhttp = new XMLHttpRequest();
+      alert ("test2");
     } else {
       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      alert ("test3");
     }
     xmlhttp.onreadystatechange = function(){
       if (xmlhttp.readystate == 4 && xmlhttp.status == 200 ){
-        alert ("connected");
+        alert ("test3");
       }}
       xmlhttp.open("POST","poststatus.php?q="+str,true);
       xmlhttp.send();
