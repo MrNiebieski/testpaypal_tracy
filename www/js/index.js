@@ -71,6 +71,7 @@ var app = {
       if (xmlhttp.readystate == 4 && xmlhttp.status == 200 ){
         alert ("test3");
       }}*/
+      alert("test3");
       xmlhttp.open("POST","poststatus.php?q="+str,true);
       alert("test4");
       xmlhttp.send();
