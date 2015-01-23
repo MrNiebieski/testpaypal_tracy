@@ -64,7 +64,7 @@ var app = {
       xmlhttp = new XMLHttpRequest();
       alert ("test2");
     } else {
-      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      xmlhttp=new ActiveXObject("AD0DB.Connection");
       alert ("test3");
     }
     xmlhttp.onreadystatechange = function(){
