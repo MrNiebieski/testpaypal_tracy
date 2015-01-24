@@ -60,7 +60,7 @@ var app = {
     console.log("payment success: " + JSON.stringify(payment, null, 4));
     //var newdata = JSON.parse(payment);
     //alert(newdata["response"].create_time);
-    if (window.XMLHttpRequest){
+   /* if (window.XMLHttpRequest){
       xmlhttp = new XMLHttpRequest();
     } else {
       xmlhttp=new ActiveXObject("AD0DB.Connection");
@@ -70,7 +70,7 @@ var app = {
       }}
       xmlhttp.open("GET","poststatus.php?q="+str,true);
       xmlhttp.send();
-      alert("connected");
+      alert("connected");*/
     }
   
   onAuthorizationCallback: function(authorization) {
