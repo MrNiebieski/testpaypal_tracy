@@ -78,10 +78,6 @@ var app = {
           alert(msg);
         }
       });
-      /*window.alert=function(title,message){
-        var title = "Confirmed";
-        var message = "Your payment has been successfully processed.";
-      }*/
   },
   
   onAuthorizationCallback: function(authorization) {
