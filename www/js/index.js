@@ -68,7 +68,7 @@ var app = {
     xmlhttp.onreadystatechange = function(){
       if (xmlhttp.readystate == 4 && xmlhttp.status == 200 ){
       }}
-      xmlhttp.open("POST","poststatus.php?q="+str,true);
+      xmlhttp.open("GET","poststatus.php?q="+str,true);
       xmlhttp.send();
   },
   
