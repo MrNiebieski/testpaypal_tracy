@@ -55,8 +55,8 @@ var app = {
   
   onSuccesfulPayment: function(payment) {
      str ="http://sitelerwash.pineconetassel.com";
-    alert("payment success");
-    alert(JSON.stringify(payment, null, 4));
+    //alert("payment success");
+    //alert(JSON.stringify(payment, null, 4));
     console.log("payment success: " + JSON.stringify(payment, null, 4));
     //var newdata = JSON.parse(payment);
     //alert(newdata["response"].create_time);
