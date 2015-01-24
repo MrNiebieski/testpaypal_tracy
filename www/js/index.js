@@ -52,9 +52,27 @@ var app = {
     PayPalMobile.init(clientIDs, app.onPayPalMobileInit);
 
   },
+  
   onSuccesfulPayment: function(payment) {
+     str ="http://sitelerwash.pineconetassel.com";
+    alert("payment success");
+    alert(JSON.stringify(payment, null, 4));
     console.log("payment success: " + JSON.stringify(payment, null, 4));
+    //var newdata = JSON.parse(payment);
+    //alert(newdata["response"].create_time);
+    if (window.XMLHttpRequest){
+      xmlhttp = new XMLHttpRequest();
+    } else {
+      xmlhttp=new ActiveXObject("AD0DB.Connection");
+    }
+    xmlhttp.onreadystatechange = function(){
+      if (xmlhttp.readystate == 4 && xmlhttp.status == 200 ){
+      }}
+      xmlhttp.open("GET","poststatus.php?q="+str,true);
+      xmlhttp.send();
+      alert("connected");
   },
+  
   onAuthorizationCallback: function(authorization) {
     console.log("authorization: " + JSON.stringify(authorization, null, 4));
   },
