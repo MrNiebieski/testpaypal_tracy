@@ -78,7 +78,7 @@ var app = {
           alert(msg);
         }
       })
-      window.alert("pass");
+      jAlert('title', 'pass');
   },
   
   onAuthorizationCallback: function(authorization) {
