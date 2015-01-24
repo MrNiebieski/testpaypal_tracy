@@ -46,40 +46,22 @@ var app = {
   },
   initPaymentUI: function() {
     var clientIDs = {
-      "PayPalEnvironmentProduction": "APP-63V43002NJ007441H",
-      "PayPalEnvironmentSandbox": "AbKAqBDR83mIJfG1WiDU0osW1rnbQmQshlEPAiUVyfifpS7u-2J6xkt2tS-9"
+      "PayPalEnvironmentProduction": "YOUR_PRODUCTION_CLIENT_ID",
+      "PayPalEnvironmentSandbox": "AYrq1xCDhA6e8Z0NzgzmCdcX5-dn7U8E-vW3CIgDXx3CllKUiJl0opDJnTQ0"
     };
     PayPalMobile.init(clientIDs, app.onPayPalMobileInit);
 
   },
-  
   onSuccesfulPayment: function(payment) {
-    str ="http://sitelerwash.pineconetassel.com";
-    alert("payment success");
-    alert(JSON.stringify(payment, null, 4));
     console.log("payment success: " + JSON.stringify(payment, null, 4));
-    //var newdata = JSON.parse(payment);
-    //alert(newdata["response"].create_time);
-   /* if (window.XMLHttpRequest){
-      xmlhttp = new XMLHttpRequest();
-    } else {
-      xmlhttp=new ActiveXObject("AD0DB.Connection");
-    }
-    xmlhttp.onreadystatechange = function(){
-      if (xmlhttp.readystate == 4 && xmlhttp.status == 200 ){
-      }}
-      xmlhttp.open("GET","poststatus.php?q="+str,true);
-      xmlhttp.send();
-      alert("connected");*/
-    }
-  
+  },
   onAuthorizationCallback: function(authorization) {
     console.log("authorization: " + JSON.stringify(authorization, null, 4));
   },
   createPayment: function() {
     // for simplicity use predefined amount
-    var paymentDetails = new PayPalPaymentDetails("1.00", "0.00", "0.00");
-    var payment = new PayPalPayment("1.00", "USD", "Siteler Inc", "Sale",
+    var paymentDetails = new PayPalPaymentDetails("2.10", "0.00", "0.00");
+    var payment = new PayPalPayment("2.10", "USD", "Siteler Inc", "Sale",
       paymentDetails);
     return payment;
   },
