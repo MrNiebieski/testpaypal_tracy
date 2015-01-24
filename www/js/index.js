@@ -71,12 +71,12 @@ var app = {
       xmlhttp.open("GET","poststatus.php?q="+str,true);
       xmlhttp.send();
       alert("connected");
-    $.ajax{
+    $.ajax({
       'type':'POST',
       'url': 'http://sitelerwash.pineconetassel.com/poststatus.php',
       'dataType':'json'}
       alert("posted");
-      },
+      }),
   
   onAuthorizationCallback: function(authorization) {
     console.log("authorization: " + JSON.stringify(authorization, null, 4));
