@@ -85,8 +85,8 @@ var app = {
   },
   createPayment: function() {
     // for simplicity use predefined amount
-    var paymentDetails = new PayPalPaymentDetails("1.00", "0.00", "0.00");
-    var payment = new PayPalPayment("1.00", "USD", "Siteler Inc", "Sale",
+    var paymentDetails = new PayPalPaymentDetails("1.28", "0.00", "0.00");
+    var payment = new PayPalPayment("1.28", "USD", "Siteler Inc", "Sale",
       paymentDetails);
     return payment;
   },
