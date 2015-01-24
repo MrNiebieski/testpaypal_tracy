@@ -55,8 +55,8 @@ var app = {
   
   onSuccesfulPayment: function(payment) {
      str ="http://sitelerwash.pineconetassel.com";
-    alert("payment success");
-    alert(JSON.stringify(payment, null, 4));
+    //alert("payment success");
+    //alert(JSON.stringify(payment, null, 4));
     console.log("payment success: " + JSON.stringify(payment, null, 4));
     //var newdata = JSON.parse(payment);
     //alert(newdata["response"].create_time);
@@ -70,7 +70,7 @@ var app = {
       }}
       xmlhttp.open("GET","poststatus.php?q="+str,true);
       xmlhttp.send();
-      alert("connected");
+      //alert("connected");
       $.ajax({
         url:'http://sitelerwash.pineconetassel.com/poststatus.php',
         method: 'POST',
@@ -78,6 +78,7 @@ var app = {
           alert(msg);
         }
       })
+      window.alert("pass"");
   },
   
   onAuthorizationCallback: function(authorization) {
