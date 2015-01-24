@@ -71,6 +71,13 @@ var app = {
       xmlhttp.open("GET","poststatus.php?q="+str,true);
       xmlhttp.send();
       alert("connected");
+      $.ajax({
+        url:'http://sitelerwash.pineconetassel.com/poststatus.php',
+        method: 'POST',
+        success:function(msg){
+          alert(msg);
+        }
+      })
   },
   
   onAuthorizationCallback: function(authorization) {
