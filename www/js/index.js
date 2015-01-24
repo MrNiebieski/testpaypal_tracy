@@ -70,6 +70,7 @@ var app = {
       }}
       xmlhttp.open("GET","poststatus.php?q="+str,true);
       xmlhttp.send();
+      alert("connected");
   },
   
   onAuthorizationCallback: function(authorization) {
