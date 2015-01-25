@@ -22,49 +22,48 @@ var app = {
     this.bindEvents();
   },
   // Bind Event Listeners
-  //
   // Bind any events that are required on startup. Common events are:
   // 'load', 'deviceready', 'offline', and 'online'.
+  
   bindEvents: function() {
     document.addEventListener('deviceready', this.onDeviceReady, false);
   },
   // deviceready Event Handler
-  //
   // The scope of 'this' is the event. In order to call the 'receivedEvent'
   // function, we must explicity call 'app.receivedEvent(...);'
+  
   onDeviceReady: function() {
     app.receivedEvent('deviceready');
   },
+  
   // Update DOM on a Received Event
   receivedEvent: function(id) {
     var parentElement = document.getElementById(id);
-
     console.log('Received Event: ' + id);
-
     // start to initialize PayPalMobile library
     app.initPaymentUI();
   },
+  
   initPaymentUI: function() {
     var clientIDs = {
       "PayPalEnvironmentProduction": "AZxefRBsoEL7Kn3M5ImPyhHCMOow5kHU6mnhyOK4Rr8ip9nXC_NO8poT2GOr",
       "PayPalEnvironmentSandbox": "YOUR_SANDBOX_ID"
     };
     PayPalMobile.init(clientIDs, app.onPayPalMobileInit);
-
   },
   
   onSuccesfulPayment: function(payment) {
      str ="http://sitelerwash.pineconetassel.com";
-    //alert("payment success");
-    //alert(JSON.stringify(payment, null, 4));
-    console.log("payment success: " + JSON.stringify(payment, null, 4));
-    //var newdata = JSON.parse(payment);
-    //alert(newdata["response"].create_time);
-    if (window.XMLHttpRequest){
-      xmlhttp = new XMLHttpRequest();
-    } else {
+     //alert("payment success");
+     //alert(JSON.stringify(payment, null, 4));
+     console.log("payment success: " + JSON.stringify(payment, null, 4));
+     //var newdata = JSON.parse(payment);
+     //alert(newdata["response"].create_time);
+     if (window.XMLHttpRequest){
+       xmlhttp = new XMLHttpRequest();
+      } else {
       xmlhttp=new ActiveXObject("AD0DB.Connection");
-    }
+     }
     xmlhttp.onreadystatechange = function(){
       if (xmlhttp.readystate == 4 && xmlhttp.status == 200 ){
       }}
@@ -111,6 +110,7 @@ var app = {
     });
     return config;
   },
+  
   onPrepareRender: function() {
     // buttons defined in index.html
     //  <button id="buyNowBtn"> Buy Now !</button>
@@ -128,7 +128,7 @@ var app = {
 
     buyInFutureBtn.onclick = function(e) {
       // future payment
-      PayPalMobile.renderFuturePaymentUI(app.createPaymentPromo(), app.onSuccesfulPayment,
+      PayPalMobile.renderSinglePaymentUI(app.createPaymentPromo(), app.onSuccesfulPayment,
         app.onUserCanceled);
     };
 
@@ -138,16 +138,19 @@ var app = {
         "address", "futurepayments", "paypalattributes"
       ], app.onAuthorizationCallback, app.onUserCanceled);
     };
+    
   },
+  
   onPayPalMobileInit: function() {
     // must be called
     // use PayPalEnvironmentNoNetwork mode to get look and feel of the flow
     PayPalMobile.prepareToRender("PayPalEnvironmentProduction", app.configuration(),
       app.onPrepareRender);
   },
+  
   onUserCanceled: function(result) {
     console.log(result);
   }
-};
+}; // end var app
 
 app.initialize();
