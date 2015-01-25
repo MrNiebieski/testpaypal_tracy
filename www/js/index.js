@@ -46,8 +46,8 @@ var app = {
   },
   initPaymentUI: function() {
     var clientIDs = {
-      "PayPalEnvironmentProduction": "AZxefRBsoEL7Kn3M5ImPyhHCMOow5kHU6mnhyOK4Rr8ip9nXC_NO8poT2GOr"
-      //"PayPalEnvironmentSandbox": "AbKAqBDR83mIJfG1WiDU0osW1rnbQmQshlEPAiUVyfifpS7u-2J6xkt2tS-9"
+      //"PayPalEnvironmentProduction": "AZxefRBsoEL7Kn3M5ImPyhHCMOow5kHU6mnhyOK4Rr8ip9nXC_NO8poT2GOr"
+      "PayPalEnvironmentSandbox": "AbKAqBDR83mIJfG1WiDU0osW1rnbQmQshlEPAiUVyfifpS7u-2J6xkt2tS-9"
     };
     PayPalMobile.init(clientIDs, app.onPayPalMobileInit);
 
