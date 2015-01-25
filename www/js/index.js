@@ -16,7 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var price = "1.28";
 var app = {
   // Application Constructor
   initialize: function() {
@@ -84,14 +83,25 @@ var app = {
   onAuthorizationCallback: function(authorization) {
     console.log("authorization: " + JSON.stringify(authorization, null, 4));
   },
+  
   createPayment: function() {
     // for simplicity use predefined amount
-    //var price = "1.28";
+    var price = "1.28";
     var paymentDetails = new PayPalPaymentDetails(price, "0.00", "0.00");
     var payment = new PayPalPayment(price, "USD", "Siteler Inc", "Sale",
       paymentDetails);
     return payment;
   },
+  
+  createPaymentPromo: function() {
+    // for simplicity use predefined amount
+    var price = "1.16";
+    var paymentDetails = new PayPalPaymentDetails(price, "0.00", "0.00");
+    var payment = new PayPalPayment(price, "USD", "Siteler Inc", "Sale",
+      paymentDetails);
+    return payment;
+  },
+  
   configuration: function() {
     // for more options see `paypal-mobile-js-helper.js`
     var config = new PayPalConfiguration({
@@ -118,9 +128,8 @@ var app = {
 
     buyInFutureBtn.onclick = function(e) {
       // future payment
-      price = "1.16";
-      //PayPalMobile.renderFuturePaymentUI(app.onAuthorizationCallback, app
-        .onUserCanceled);
+      PayPalMobile.renderFuturePaymentUI(app.createPaymentPromo(), app.onSuccesfulPayment,
+        app.onUserCanceled);
     };
 
     profileSharingBtn.onclick = function(e) {
