@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var price = "1.28";
 var app = {
   // Application Constructor
   initialize: function() {
@@ -85,7 +86,7 @@ var app = {
   },
   createPayment: function() {
     // for simplicity use predefined amount
-    var price = "1.28";
+    //var price = "1.28";
     var paymentDetails = new PayPalPaymentDetails(price, "0.00", "0.00");
     var payment = new PayPalPayment(price, "USD", "Siteler Inc", "Sale",
       paymentDetails);
@@ -117,7 +118,8 @@ var app = {
 
     buyInFutureBtn.onclick = function(e) {
       // future payment
-      PayPalMobile.renderFuturePaymentUI(app.onAuthorizationCallback, app
+      price = "1.16";
+      //PayPalMobile.renderFuturePaymentUI(app.onAuthorizationCallback, app
         .onUserCanceled);
     };
 
